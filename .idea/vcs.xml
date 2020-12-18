@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/conciliador-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/faculdade/Atividade_Interface-Classe_Abstrata" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/faculdade/poo/heranca_polimorfismo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/home-projects/projects/fx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/home-projects/projects/javafx-jdbc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/home-projects/projects/jdbc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/home-projects/projects/temperature-converter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/home-projects/projects/testjdbc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/projetos/projuris" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/projetos/relatorios-enterprise" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scripts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tutorials" vcs="Git" />
+  </component>
+</project>
