@@ -5,4 +5,5 @@ module JavaFxApplication {
 
     exports application to javafx.fxml, javafx.graphics, javafx.controls;
     opens application.gui;
+    opens application.gui.util;
 }
