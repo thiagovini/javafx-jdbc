@@ -3,5 +3,6 @@ module JavaFxApplication {
     requires javafx.controls;
     requires javafx.graphics;
 
-    opens application;
+    exports application to javafx.fxml, javafx.graphics, javafx.controls;
+    opens application.gui;
 }
