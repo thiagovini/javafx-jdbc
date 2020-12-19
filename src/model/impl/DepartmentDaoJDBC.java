@@ -76,7 +76,7 @@ public class DepartmentDaoJDBC implements DepartmentDao{
         try {
             preparedStatement = connection.prepareStatement(
                     "delete from department "
-                            + "where Id_Department = ?"
+                            + "where Id = ?"
             );
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
