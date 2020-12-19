@@ -103,7 +103,7 @@ public class SellerListController implements Initializable, DataChangeListener {
     }
 
     private void createDialogForm(Seller obj, String absoluteName, Stage parentStage) {
-        /*try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
             SellerFormController controller = loader.getController();
@@ -120,7 +120,7 @@ public class SellerListController implements Initializable, DataChangeListener {
             dialogStage.showAndWait();
         } catch (IOException e) {
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), Alert.AlertType.ERROR);
-        }*/
+        }
     }
 
     @Override
@@ -140,7 +140,7 @@ public class SellerListController implements Initializable, DataChangeListener {
                     return;
                 }
                 setGraphic(button);
-                /*button.setOnAction(event -> createDialogForm(obj, "SellerForm.fxml", Utils.currentStage(event)));*/
+                button.setOnAction(event -> createDialogForm(obj, "SellerForm.fxml", Utils.currentStage(event)));
             }
         });
     }
