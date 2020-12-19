@@ -1,23 +1,24 @@
 package application.gui;
 
 import application.Main;
-import listeners.DataChangeListener;
-import util.Alerts;
-import util.Utils;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
-import service.DepartmentService;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import listeners.DataChangeListener;
 import model.entities.Department;
+import service.DepartmentService;
+import util.Alerts;
+import util.Utils;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,16 +41,19 @@ public class DepartmentListController implements Initializable, DataChangeListen
     @FXML
     private TableColumn<Department, String> tableColumnName;
 
+    @FXML
+    private TableColumn<Department, Department> tableColumnEDIT;
+
     private ObservableList<Department> observableList;
 
     @FXML
-    public void onBtNewAction(ActionEvent event){
+    public void onBtNewAction(ActionEvent event) {
         Stage parentStage = Utils.currentStage(event);
         Department obj = new Department();
         createDialogForm(obj, "DepartmentForm.fxml", parentStage);
     }
 
-    public void setDepartmentService(DepartmentService departmentService){
+    public void setDepartmentService(DepartmentService departmentService) {
         this.departmentService = departmentService;
     }
 
@@ -65,10 +69,11 @@ public class DepartmentListController implements Initializable, DataChangeListen
         /*Adjust list window size*/
         Stage stage = (Stage) Main.getMainScene().getWindow();
         tableViewDepartment.prefHeightProperty().bind(stage.heightProperty());
+        initEditButtons();
     }
 
-    public void updateTableView(){
-        if (departmentService == null){
+    public void updateTableView() {
+        if (departmentService == null) {
             throw new IllegalStateException("Service was null");
         }
         List<Department> list = departmentService.findAll();
@@ -76,8 +81,8 @@ public class DepartmentListController implements Initializable, DataChangeListen
         tableViewDepartment.setItems(observableList);
     }
 
-    private void createDialogForm(Department obj, String absoluteName, Stage parentStage){
-        try{
+    private void createDialogForm(Department obj, String absoluteName, Stage parentStage) {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
             DepartmentFormController controller = loader.getController();
@@ -92,7 +97,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
             dialogStage.initOwner(parentStage);
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.showAndWait();
-        } catch (IOException e){
+        } catch (IOException e) {
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), Alert.AlertType.ERROR);
         }
     }
@@ -102,5 +107,21 @@ public class DepartmentListController implements Initializable, DataChangeListen
         updateTableView();
     }
 
+    private void initEditButtons() {
+        tableColumnEDIT.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+        tableColumnEDIT.setCellFactory(param -> new TableCell<Department, Department>() {
+            private final Button button = new Button("edit");
+            @Override
+            protected void updateItem(Department obj, boolean empty) {
+                super.updateItem(obj, empty);
+                if (obj == null) {
+                    setGraphic(null);
+                    return;
+                }
+                setGraphic(button);
+                button.setOnAction(event -> createDialogForm(obj, "DepartmentForm.fxml", Utils.currentStage(event)));
+            }
+        });
+    }
 
 }

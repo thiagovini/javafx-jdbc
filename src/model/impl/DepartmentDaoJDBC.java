@@ -55,7 +55,7 @@ public class DepartmentDaoJDBC implements DepartmentDao{
             preparedStatement = connection.prepareStatement(
                     "update department "
                             + "set Name = ? "
-                            + "where Id_Department = ?"
+                            + "where Id = ?"
             );
 
             preparedStatement.setString(1, obj.getName());
