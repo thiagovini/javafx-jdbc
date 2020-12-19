@@ -108,7 +108,7 @@ public class SellerDaoJDBC implements SellerDao {
         try{
             preparedStatement = connection.prepareStatement(
                     "select seller.*, department.Name as DepName from seller "
-                    + "inner join department on seller.DepartmentId = department.DepartmentId "
+                    + "inner join department on seller.DepartmentId = department.Id "
                     + "where seller.Id = ?");
 
             preparedStatement.setInt(1, id);
@@ -198,7 +198,7 @@ public class SellerDaoJDBC implements SellerDao {
         try{
             preparedStatement = connection.prepareStatement(
                     "select seller.*, department.Name as DepName from seller "
-                    + "inner join department on seller.DepartmentId = department.DepartmentId "
+                    + "inner join department on seller.DepartmentId = department.Id "
                     + "where DepartmentId = ? "
                     + "order by Name"
                     );
