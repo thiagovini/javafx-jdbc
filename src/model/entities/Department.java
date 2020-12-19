@@ -1,8 +1,9 @@
-package application.model.entities;
+package model.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Department {
+public class Department implements Serializable {
 
     private Integer id;
     private String name;

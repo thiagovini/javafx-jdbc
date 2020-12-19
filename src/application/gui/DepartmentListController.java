@@ -1,8 +1,7 @@
 package application.gui;
 
 import application.Main;
-import application.model.entities.Department;
-import application.model.service.DepartmentService;
+import service.DepartmentService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.entities.Department;
 
 import java.net.URL;
 import java.util.List;
