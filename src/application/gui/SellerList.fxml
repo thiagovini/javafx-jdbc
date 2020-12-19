@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.SellerListController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.SellerListController">
    <children>
       <Label text="Seller Registration">
          <font>
@@ -27,9 +27,12 @@
       <TableView fx:id="tableViewSeller" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="tableColumnName" prefWidth="238.0" text="Name" />
-            <TableColumn fx:id="tableColumnEDIT" minWidth="0.0" prefWidth="93.0" />
-            <TableColumn fx:id="tableColumnREMOVE" />
+          <TableColumn fx:id="tableColumnName" prefWidth="251.0" text="Name" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="207.0" text="Email" />
+            <TableColumn fx:id="tableColumnBirthDate" prefWidth="118.0" text="BirthDate" />
+            <TableColumn fx:id="tableColumnBaseSalary" prefWidth="122.0" text="Base Salary" />
+            <TableColumn fx:id="tableColumnEDIT" minWidth="0.0" prefWidth="81.0" />
+            <TableColumn fx:id="tableColumnREMOVE" minWidth="0.0" prefWidth="141.0" />
         </columns>
       </TableView>
    </children>
