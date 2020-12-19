@@ -1,7 +1,7 @@
 package application.gui;
 
 import application.Main;
-import application.util.Alerts;
+import util.Alerts;
 import service.DepartmentService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

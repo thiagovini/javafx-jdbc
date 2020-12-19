@@ -1,4 +1,4 @@
-package application.listeners;
+package listeners;
 
 public interface DataChangeListener {
 

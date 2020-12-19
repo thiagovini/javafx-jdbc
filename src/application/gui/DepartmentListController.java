@@ -1,16 +1,14 @@
 package application.gui;
 
 import application.Main;
-import application.listeners.DataChangeListener;
-import application.util.Alerts;
-import application.util.Utils;
+import listeners.DataChangeListener;
+import util.Alerts;
+import util.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import service.DepartmentService;
 import javafx.collections.FXCollections;
