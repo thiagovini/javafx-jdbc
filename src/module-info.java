@@ -7,6 +7,6 @@ module JavaFxApplication {
     exports application to javafx.fxml, javafx.graphics, javafx.controls;
     exports model.entities to javafx.base;
     opens application.gui;
-    opens application.gui.util;
+    opens application.util;
     opens model.entities to javafx.base;
 }
