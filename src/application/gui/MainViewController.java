@@ -1,6 +1,7 @@
 package application.gui;
 
 import application.Main;
+import service.SellerService;
 import util.Alerts;
 import service.DepartmentService;
 import javafx.fxml.FXML;
@@ -31,7 +32,10 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void onMenuItemSellerAction(){
-        System.out.println("onMenuItemSeller");
+        loadView("SellerList.fxml", (SellerListController controller) ->{
+            controller.setSellerService(new SellerService());
+            controller.updateTableView();
+        });
     }
 
     @FXML

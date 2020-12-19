@@ -95,7 +95,7 @@ public class DepartmentDaoJDBC implements DepartmentDao{
         try{
             preparedStatement = connection.prepareStatement(
                     "select * from department "
-                    + " where Id_Department = ?"
+                    + " where Id = ?"
             );
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
